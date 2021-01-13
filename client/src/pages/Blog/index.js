@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Container } from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';
@@ -8,13 +9,16 @@ import Posts from '../../components/Posts';
 class Blog extends React.Component {
     render () {
         return (
-            <div className="page blog">
+            <div className="page blog d-flex flex-column">
                 <Helmet>
                     <title>Positive Treinamentos - Blog</title>
                 </Helmet>
 
                 <CustomNavbar />
-                <Posts limit={4} />
+                <Container fluid className="flex-grow-1 flex-shrink-0">
+                    <CustomNavbar />
+                    <Posts limit={4} />
+                </Container>
                 <Footer />
             </div>
         );

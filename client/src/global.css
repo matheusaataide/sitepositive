@@ -1,7 +1,7 @@
 .btn {
     display: inline-block;
     padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
-    border: 0.125rem solid #14bf98;
+    border: .125rem solid #14bf98;
     border-radius: 50vh;
     background-color: #14bf98;
     color: #fff;
@@ -42,8 +42,9 @@ p {
     }
     .page .page-section:first-of-type .section-title {
         font-size: 2em;
-        text-align: right;
+        text-align: left;
         color: #fff;
+        margin-bottom: 2em;
     }
 }
 

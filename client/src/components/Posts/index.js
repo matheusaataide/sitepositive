@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap'; 
+import { Container, Row, Col, Card} from 'react-bootstrap'; 
 import api from '../../services/api';
 
 import './styles.css';
-import BlogImage1 from '../../assets/img/posts/post1.png';
-import BlogImage2 from '../../assets/img/posts/post2.jpeg';
-import BlogImage3 from '../../assets/img/posts/post3.jpeg';
 
 export default class Posts extends React.Component {
     constructor (props) {
@@ -31,9 +28,9 @@ export default class Posts extends React.Component {
         return <section className="page-section posts">
             <Container>
                 <Row>
-                    <div className="col-lg-8 text-center mb-5 mx-auto">
+                    <Col xs={12} lg={{ span: 6, offset: 6 }}>
                         <h2 className="section-title">Vamos aprender juntos?</h2>
-                    </div>
+                    </Col>
                 </Row>
                 <Row>
                     { this.state.posts.map(course => (
@@ -41,7 +38,7 @@ export default class Posts extends React.Component {
                             <Card>
                                 <Card.Img src={`./img/posts/${course.img}`} variant="top" alt={course.title} />
                                 <Card.Body>
-                                    <p>{course.content}</p>
+                                    <p>{course.createdAt.data}</p>
                                 </Card.Body>
                                 <div className="button-container">
                                     <Link className="btn btn-primary" to="/post1">Ler mais</Link>
