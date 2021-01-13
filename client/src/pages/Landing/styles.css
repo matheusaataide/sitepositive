@@ -1,4 +1,4 @@
-.page-landing {
+.landing-page {
     background: url("../../assets/img/bg-right.svg") 100% 7em no-repeat !important;
 }
 section {
@@ -7,7 +7,7 @@ section {
 }
  
 @media (min-width: 1200px) {
-    .page-landing {
+    .landing-page {
         background: #fff !important;
     }
 }

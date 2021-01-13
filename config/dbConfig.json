@@ -1,20 +1,17 @@
 {
     "development": {
         "database": "positivetreinamentos",
-        "username": "root",
-        "password": "M4th3us.",
-        "dialect": "mysql",
-        "host": "localhost",
-        "port": 3306,
+        "username": "",
+        "password": "",
+        "dialect": "sqlite",
+        "storage": "dev.sqlite",
         "operatorAliases": false,
         "logging": false,
         "define": {
             "timestamps": true,
             "underscored": true,
             "underscoredAll": true
-        },
-        "jwtSecret": "Posi##",
-        "jwtSession": { "session": false }
+        }
     },
     "production": {
 

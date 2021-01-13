@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Image } from 'react-bootstrap';
 import './styles.css';
 import RafaelProfilePic from '../../assets/img/photos/rafael.jpg';
 import PatriciaProfilePic from '../../assets/img/photos/patricia.jpg';
-import PatriciaCartoon from '../../assets/img/caricaturas/patricia.png';
+// import PatriciaCartoon from '../../assets/img/caricaturas/patricia.png';
 
 const AboutUs = () => {
     return <section className="page-section about-us" id="about-us">

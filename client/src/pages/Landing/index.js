@@ -1,14 +1,16 @@
 import React from "react";
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/CustomNavbar';
 import Header from "../../components/Header";
 import WeBelieve from '../../components/WeBelieve';
-import History from '../../components/History';
+import OurHistory from '../../components/OurHistory';
 import AboutUs from "../../components/AboutUs";
-import Blog from "../../components/Blog";
-
-import './styles.css';
+import Posts from "../../components/Posts";
 import ContactForm from "../../components/ContactForm";
 import Schedule from "../../components/Schedule";
+import Footer from "../../components/Footer";
+
+import './styles.css';
+
 
 export default function Landing() {
   return (
@@ -17,10 +19,11 @@ export default function Landing() {
       <Header />
       <WeBelieve />
       <Schedule />
-      
-      <History />
+      <OurHistory />
       <AboutUs />
-      <Blog />
+      <Posts />
+      <ContactForm />
+      <Footer />
     </div>
   );
 }

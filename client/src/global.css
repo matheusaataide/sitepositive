@@ -29,6 +29,24 @@ p {
     
     margin-bottom: 1.5em;
 }
+@media (min-width: 1200px) {
+    .page {
+        position: absolute;
+        top: 0;
+
+        width: 100vw;
+        padding-top: 6em;
+
+        background: url("./assets/img/header-background.jpg") center center no-repeat;
+        background-size: cover;
+    }
+    .page .page-section:first-of-type .section-title {
+        font-size: 2em;
+        text-align: right;
+        color: #fff;
+    }
+}
+
 .card .card-title {
     font-size: 1.25em;
     font-family: 'Nunito', sans-serif;
@@ -37,7 +55,6 @@ p {
 
     margin-bottom: .75em;
 }
-
 .section-title {
     font-size: 1.25em;
     font-family: 'Nunito', sans-serif;

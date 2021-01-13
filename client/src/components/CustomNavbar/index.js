@@ -4,18 +4,12 @@ import { Navbar, Nav, OverlayTrigger, Tooltip, Container } from 'react-bootstrap
 import './styles.css';
 import Logo from '../../assets/img//logo/logo.png';
 
-class customNavbar extends React.Component {
+class CustomNavbar extends React.Component {
     listener = null;
 
     state = {
         nav: false
     };
-
-    componentDidMount() {
-    }
-
-    componentWillUnmount () {
-    }
 
     render () {
         return (
@@ -58,4 +52,4 @@ class customNavbar extends React.Component {
     }
 };
 
-export default customNavbar;
+export default CustomNavbar;

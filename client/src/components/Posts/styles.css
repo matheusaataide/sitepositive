@@ -1,23 +1,23 @@
-.blog .card {
+.posts .card {
     margin-bottom: 5.625rem;
     border: none;
     background-color: transparent;
 }
-.blog .card img {
+.posts .card img {
     border-radius: 1em 1em 0 0 !important;
 }
-.blog .card .card-body {
+.posts .card .card-body {
     padding: 1rem 1.5rem 2.25rem 1.5rem;
     border: 1px solid #ebe8e8;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
     background-color: #fff;
 }
-.blog .card h3 {
+.posts .card h3 {
     margin-bottom: 0.75rem;
     text-align: center;
 }
-.blog .card p {
+.posts .card p {
     font-size: .8em !important;
     font-family: 'Montserrat';
     line-height: 1.75em;
@@ -27,27 +27,27 @@
     margin-top: .75em;
     margin-bottom: .75em;
 }
-.blog .card .button-container {
+.posts .card .button-container {
     margin-top: -1.375rem;
     text-align: center;
 }
-.blog .card .btn {
+.posts .card .btn {
     text-transform: uppercase;
 }
 
 
 @media (min-width: 992px) {
-    .blog .card {
+    .posts .card {
         max-width: 18.25rem;
         display: inline-block;
         vertical-align: top;
     }
 }
 @media (min-width: 1200px) {
-    .blog .card {
+    .posts .card {
         max-width: 20.875rem;
     }
-    .blog .card .card-body {
+    .posts .card .card-body {
         padding: 1.5rem 2.5rem 2.125rem 2.5rem;
     }
 }
