@@ -1,0 +1,63 @@
+.btn {
+    display: inline-block;
+    padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
+    border: 0.125rem solid #14bf98;
+    border-radius: 50vh;
+    background-color: #14bf98;
+    color: #fff;
+    font: 700 0.75rem/0 "Montserrat", sans-serif;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.btn.btn-primary {
+    background-color: #2ba2cc;
+    border-color: #2ba2cc;
+}
+.btn.btn-primary:hover {
+    background-color: #fff;
+    color: #2ba2cc;
+    text-decoration: none;
+}
+img {
+    border-radius: 1em !important;
+}
+p {
+    font-size: 1em !important;
+    font-family: 'Montserrat';
+    line-height: 1.75em;
+    color: rgb(128, 128,128);
+    
+    margin-bottom: 1.5em;
+}
+.card .card-title {
+    font-size: 1.25em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+
+    margin-bottom: .75em;
+}
+
+.section-title {
+    font-size: 1.25em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+    text-align: center;
+
+    margin-top: .75em;
+    margin-bottom: .75em;
+}
+.section-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bolder;
+    color: #4cd8b1;
+    text-transform: uppercase;
+    text-align: center;
+}
+@media (min-width: 1200px) {
+    .section-title {
+        font-size: 2em;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+}

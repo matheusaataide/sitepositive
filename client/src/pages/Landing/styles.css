@@ -1,0 +1,13 @@
+.page-landing {
+    background: url("../../assets/img/bg-right.svg") 100% 7em no-repeat !important;
+}
+section {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+ 
+@media (min-width: 1200px) {
+    .page-landing {
+        background: #fff !important;
+    }
+}

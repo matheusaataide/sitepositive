@@ -1,0 +1,14 @@
+
+.we-believe img {
+    display: none;
+}
+.we-believe p {
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+@media (min-width: 1200px){
+    .we-believe img {
+        display: inline;
+    }
+}
