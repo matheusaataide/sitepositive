@@ -11,7 +11,6 @@ import Footer from "../../components/Footer";
 
 import './styles.css';
 
-
 export default function Landing() {
   return (
     <div id="page-landing" className="page-landing">

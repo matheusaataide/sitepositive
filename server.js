@@ -4,6 +4,7 @@ const nodemailer = require('nodemailer');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 
 const routes = require('./routes');
 
@@ -29,6 +30,11 @@ server.use(
 // Fazendo roteamento
 server.use('/api', routes);
 
-server.use(Express.static('public'));
+const baseDir = `${__dirname}/build/`
+server.use(Express.static(`${baseDir}`));
+server.get('/', (req, res) => res.sendFile('index.html', { root: baseDir }));
+server.get('*', function (req, res) {
+    res.sendFile('index.html', { root: baseDir });
+});
 
 module.exports = server;

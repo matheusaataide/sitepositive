@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card} from 'react-bootstrap'; 
-import api from '../../services/api';
+import axios from 'axios';
 
 import './styles.css';
 
@@ -17,7 +17,7 @@ export default class Posts extends React.Component {
     }
 
     componentDidMount () {
-        api.get(`posts?limit=${this.state.limit}&offset=${this.state.offset}`)
+        axios.get(`/api/posts?limit=${this.state.limit}&offset=${this.state.offset}`)
             .then(res => {
                 const posts = res.data;
                 this.setState({ posts });
