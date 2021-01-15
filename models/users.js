@@ -21,8 +21,9 @@ module.exports = (sequelize, DataType) => {
         },
         'password': {
             type: DataType.STRING,
-            defaultValue: ''
-        }
+            defaultValue: '1234'
+        }, 
+        'profilePic': DataType.STRING
     }, {
         sequelize,
         tableName: 'users',

@@ -1,4 +1,5 @@
 const httpStatus = require('http-status');
+const security = require('../util/security');
 
 const UserController = database => ({
     delete: async (req, res) => {
@@ -27,14 +28,18 @@ const UserController = database => ({
         const user = await users.update(req.body, { where: req.params });
         return res.status(httpStatus.CREATED).json(user);
     },
+
+    // Funcão responsável pela autenticação
     login: async (req, res) => {
         const { users } = database;
 
         const { username, password } = req.body;
 
         const user = await users.findOne({ where: { username: username }});
+        if (user === null) 
+            return res.status(httpStatus.BAD_REQUEST).json({ auth: false });
 
-        return res.status(httpStatus.OK).json({ authorized: user.password === password });
+        return res.status(httpStatus.OK).json(security.login(user, password));   
     }
 });
 

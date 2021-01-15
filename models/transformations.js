@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataType) => {
-    const courses = sequelize.define('courses', {
+    const transformations = sequelize.define('transformations', {
         'id': {
             type: DataType.INTEGER,
             primaryKey: true,
@@ -16,30 +16,23 @@ module.exports = (sequelize, DataType) => {
         'status': {
             type: DataType.STRING,
             defaultValue: true
-        },
-        'img': {
-            type: DataType.STRING,
-            defaultValue: ''
-        },
-        'date': {
-            type: DataType.STRING,
-            defaultValue: ''
         }
     }, {
         sequelize,
-        tableName: 'courses',
+        tableName: 'transformations',
         underscoredAll: true,
         underscored: true,
         freezeTableName: true
     });
 
-    courses.associate = models => {
-        const { users, transformations } = models;
-        
-        courses.belongsTo(users, { as: 'createdBy' });
-        courses.belongsTo(users, { as: 'updatedBy' });
-        courses.belongsTo(transformations);
+    transformations.associate = models => {
+        const { users, courses, testemonials } = models;
+
+        transformations.belongsTo(users, { as: 'createdBy' });
+        transformations.belongsTo(users, { as: 'updatedBy' });
+        transformations.hasMany(courses);
+        transformations.hasMany(testemonials);
     };
 
-    return courses;
+    return transformations;
 };

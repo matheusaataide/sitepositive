@@ -29,7 +29,13 @@ module.exports = (sequelize, DataType) => {
         freezeTableName: true
     });
 
-    testemonials.associate = models => {};
+    testemonials.associate = models => {
+        const { users, transformations } = models;
+
+        testemonials.belongsTo(users, { as: 'createdBy' });
+        testemonials.belongsTo(users, { as: 'updatedBy' });
+        testemonials.belongsTo(transformations);
+    };
 
     return testemonials;
 };

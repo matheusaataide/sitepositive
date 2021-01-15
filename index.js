@@ -1,10 +1,8 @@
 const server = require('./server.js');
 
-const host = process.env.HOST || 'localhost';
+const host = process.env.HOST || 'positivetreinamentos.com.br';
 const port = process.env.PORT || 3000;
 
-console.log(process.env.HOST)
-
 server.listen(port, () => {
-    console.log(`API Server is running on http://${host}:${port}/api`);
+    console.log(`[${ process.env.NODE_ENV.toUpperCase() }] Server is running on http://${host}:${port}/api`);
 });

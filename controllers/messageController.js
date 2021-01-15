@@ -22,14 +22,16 @@ const MessageController = database => ({
         const { messages } = database;
 
         const msg = await messages.create(req.body); 
-        console.log(email.send(
-                        [{ 
-                            "name": msg.name, 
-                            "email": msg.email 
-                        }],
-                        "Recebemos uma nova mensagem no site",
-                        newMsgTemplate(msg.content)
-                    ));
+
+        const to = { 
+            "name": "Positive Treinamentos",
+            "email": process.env.TO_EMAIL || 'positivetreinamentos@gmail.com'
+        }
+        email.send(
+                    [to],
+                    "Recebemos uma nova mensagem no site",
+                    newMsgTemplate(msg.content)
+                );
 
         return res.status(httpStatus.CREATED).json(msg);
     },

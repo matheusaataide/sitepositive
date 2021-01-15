@@ -29,7 +29,12 @@ module.exports = (sequelize, DataType) => {
         freezeTableName: true
     });
 
-    posts.associate = models => {};
+    posts.associate = models => {
+        const { users } = models;
+
+        posts.belongsTo(users, { as: 'createdBy' });
+        posts.belongsTo(users, { as: 'updatedBy' });
+    };
 
     return posts;
 };

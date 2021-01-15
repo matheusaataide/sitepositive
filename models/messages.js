@@ -15,7 +15,7 @@ module.exports = (sequelize, DataType) => {
         },
         'status': {
             type: DataType.BOOLEAN,
-            defaultValue: true
+            defaultValue: false
         },
         'email': {
             type: DataType.STRING,
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataType) => {
         'whatsapp': {
             type: DataType.STRING,
             defaultValue: ''
-        },
+        }
     }, {
         sequelize,
         tableName: 'messages',
@@ -33,7 +33,11 @@ module.exports = (sequelize, DataType) => {
         freezeTableName: true
     });
 
-    messages.associate = models => {};
+    messages.associate = models => {
+        const { users } = models;
+
+        messages.belongsTo(users, { as: 'viewedBy' });
+    };
 
     return messages;
 };

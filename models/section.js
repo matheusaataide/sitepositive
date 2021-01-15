@@ -29,7 +29,11 @@ module.exports = (sequelize, DataType) => {
         freezeTableName: true
     });
 
-    sections.associate = models => {};
+    sections.associate = models => {
+        const { users } = models;
+
+        sections.belongsTo(users, { as: 'updatedBy' });
+    };
 
     return sections;
 };

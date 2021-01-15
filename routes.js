@@ -8,6 +8,7 @@ const CourseController = require('./controllers/courseController');
 const SectionController = require('./controllers/sectionController');
 const ViewController = require('./controllers/viewController');
 const MessageController = require('./controllers/messageController');
+const security = require('./util/security');
 
 const router = Express.Router();
 
@@ -27,7 +28,7 @@ router.get('/', (req, res) => {
 const usersCtrl = UserController(database);
 router.get('/users/:id', usersCtrl.get);
 router.get('/users', usersCtrl.getAll);
-router.post('/users', usersCtrl.save);
+router.post('/users', security.authenticate, usersCtrl.save);
 router.put('/users/:id', usersCtrl.edit);
 router.delete('/users/:id', usersCtrl.delete);
 router.post('/login', usersCtrl.login);
