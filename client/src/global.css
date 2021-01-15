@@ -42,9 +42,9 @@ p {
     }
     .page .page-section:first-of-type .section-title {
         font-size: 2em;
-        text-align: left;
+        text-align: right;
         color: #fff;
-        margin-bottom: 2em;
+        margin-bottom: 5em;
     }
 }
 

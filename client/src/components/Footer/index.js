@@ -8,7 +8,7 @@ import Association from '../../assets/img/associacao.png';
 const Footer = () => (
     <footer className="footer-section bg-white flex-shrink-0">
         <Container>
-            <Row class="flex-column-reverse flex-md-row pt-5 mt-5">
+            <Row className="flex-column-reverse flex-md-row pt-5 mt-5">
                 <Col xs={12} lg={6} className="text-center">
                    <Image fluid src={Association} alt="PDA Associação" className="association" />
                 </Col>

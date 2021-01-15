@@ -4,6 +4,7 @@ import { Container, Row, Col, Card} from 'react-bootstrap';
 import axios from 'axios';
 
 import './styles.css';
+import PostCard from './PostCard';
 
 export default class Posts extends React.Component {
     constructor (props) {
@@ -25,6 +26,10 @@ export default class Posts extends React.Component {
     }
 
     render() {
+        const posts = this.state.posts;
+        console.log(posts);
+
+
         return <section className="page-section posts">
             <Container>
                 <Row>
@@ -33,17 +38,9 @@ export default class Posts extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    { this.state.posts.map(course => (
-                        <Col key={course.id}>
-                            <Card>
-                                <Card.Img src={`./img/posts/${course.img}`} variant="top" alt={course.title} />
-                                <Card.Body>
-                                    <p>{course.createdAt.data}</p>
-                                </Card.Body>
-                                <div className="button-container">
-                                    <Link className="btn btn-primary" to="/post1">Ler mais</Link>
-                                </div>
-                            </Card>
+                    { posts.map(post => (
+                        <Col key={post.id} >
+                            <PostCard post={post} />
                         </Col>
                     )) }
                 </Row>
