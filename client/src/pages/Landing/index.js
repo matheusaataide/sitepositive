@@ -7,6 +7,7 @@ import OurStory from '../../sections/OurStory';
 import AboutUs from "../../sections/AboutUs";
 import LearnTogether from "../../sections/LearnTogether";
 import Schedule from "../../sections/NextEvents";
+import ContactUs from "../../sections/ContactUs";
 import Footer from "../../components/Footer";
 
 import './styles.css';
@@ -20,6 +21,7 @@ const Landing = () => (
 		<OurStory />
 		<AboutUs />
 		<LearnTogether />
+		<ContactUs />
 		<Footer />
 	</div>
 );

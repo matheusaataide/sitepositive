@@ -2,12 +2,13 @@ import React from 'react';
 import { Image, Card } from 'react-bootstrap';
 
 import './styles.css';
+import baseUrl from '../../util/baseUrl';
 
 const ProfileCard = props => (
     <Card className="profile-card">
         <Card.Body>
             <Image roundedCircle fluid
-                src={`http://192.168.100.80:3001/uploads/${props.user.profilePic}`} 
+                src={`${baseUrl}/${props.user.profilePic}`} 
                 alt={props.user.name} />
             <Card.Title>{props.user.name}</Card.Title>
             <hr className="cell-divide-hr" />

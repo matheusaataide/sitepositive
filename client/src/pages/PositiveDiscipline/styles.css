@@ -1,0 +1,12 @@
+@media (min-width: 992px) {
+    .page.positive-discipline {
+        padding-top: 8em;
+        background: url('../../assets/img/header-background.jpg') center -5em no-repeat;
+    }
+    .page.positive-discipline .page-title {
+        margin-bottom: .2em;
+    }
+    .page.positive-discipline .lead {
+        margin-bottom: 5em;
+    }
+}

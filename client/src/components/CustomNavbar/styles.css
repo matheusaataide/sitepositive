@@ -40,7 +40,9 @@
         padding-left: 2em;
         max-height: 80px !important;
     } 
-    .navbar .navbar-nav .nav-link {
+    .navbar.navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .75rem !important;
+        padding-left: .75rem !important;
         font-size: 1em;
         color: #2ba2cc !important;
     }

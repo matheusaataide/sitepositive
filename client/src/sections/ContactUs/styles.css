@@ -1,0 +1,20 @@
+.contact-us .section-wrapper {
+    padding: 3em 1em;
+}
+.contact-us h2,
+.contact-us p {
+    margin-bottom: 1.5em;
+}
+
+.contact-us .list-unstyled {
+    margin-bottom: 1.875em;
+}
+
+@media (min-width: 992px) {
+    .contact-us .section-wrapper {
+        padding: 5em 2em;
+    }
+    .contact-us form {
+        margin-left: 2.75em;
+    }
+}
