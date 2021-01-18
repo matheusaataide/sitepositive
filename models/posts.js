@@ -7,14 +7,14 @@ module.exports = (sequelize, DataType) => {
         },
         'title': {
             type: DataType.STRING,
-            allowNull: false
+            defaultValue: ''
         },
         'content': {
-            type: DataType.STRING,
-            allowNull: false
+            type: DataType.TEXT,
+            defaultValue: ''
         },
         'status': {
-            type: DataType.STRING,
+            type: DataType.BOOLEAN,
             defaultValue: true
         },
         'img': {

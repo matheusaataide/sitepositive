@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const routes = require('./routes');
+const { default: axios } = require('axios');
 
 const server = Express();
 
@@ -18,12 +19,20 @@ server.use(
     bodyParser.urlencoded({ limit: '25mb', extended: true }),
     bodyParser.json({ limit: '25mb' }),
     cors(),
-    morgan(process.env.NODE_ENV === "development" ? 'dev' : 'combined')
+    morgan(process.env.NODE_ENV === "development" ? 'dev' : 'combined'),
+    (err, req, res, next) => {
+        console.error(err.stack);
+        res.status(500).send('Something broke!');
+    }
 );
 
 // Fazendo roteamento de rotas da API
 server.use('/api', routes);
 
+// Disponibilizando uploads 
+server.use('/uploads', Express.static('./uploads'));
+
+// Front end
 if (process.env.NODE_ENV === 'production') {
     const baseDir = `${__dirname}/build/`
     server.use(Express.static(`${baseDir}`));
@@ -33,6 +42,7 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile('index.html', { root: baseDir });
     });
 }
+
 
 
 module.exports = server;

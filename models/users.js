@@ -12,18 +12,21 @@ module.exports = (sequelize, DataType) => {
         },
         'name': {
             type: DataType.STRING,
-            allowNull: false
+            defaultValue: ''
         },
         'email': {
             type: DataType.STRING,
             unique: true,
-            allowNull: false
+            defaultValue: ''
         },
         'password': {
             type: DataType.STRING,
             defaultValue: '1234'
         }, 
-        'profilePic': DataType.STRING
+        'profilePic': {
+            type: DataType.STRING,
+            defaultValue: ''
+        }
     }, {
         sequelize,
         tableName: 'users',
@@ -32,7 +35,11 @@ module.exports = (sequelize, DataType) => {
         freezeTableName: true
     });
 
-    users.associate = models => {};
+    users.associate = models => {
+        const { graduations } = models;
+
+        users.hasMany(graduations);
+    };
 
     return users;
 };

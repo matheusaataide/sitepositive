@@ -13,7 +13,7 @@ module.exports = (sequelize, DataType) => {
             type: DataType.STRING,
             allowNull: false
         },
-        'status': {
+        'viewed': {
             type: DataType.BOOLEAN,
             defaultValue: false
         },

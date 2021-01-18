@@ -4,7 +4,6 @@ import { Container } from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';
-import Posts from '../../components/Posts';
 
 class Blog extends React.Component {
     render () {

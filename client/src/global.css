@@ -1,3 +1,9 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+.page > .container {
+    min-height: 100vh;
+}
 .btn {
     display: inline-block;
     padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
@@ -5,7 +11,7 @@
     border-radius: 50vh;
     background-color: #14bf98;
     color: #fff;
-    font: 700 0.75rem/0 "Montserrat", sans-serif;
+    font: 700 0.75rem/0 "Nunito", sans-serif;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -23,13 +29,18 @@ img {
 }
 p {
     font-size: 1em !important;
-    font-family: 'Montserrat';
+    font-family: 'Nunito', sans-serif;
     line-height: 1.75em;
     color: rgb(128, 128,128);
     
     margin-bottom: 1.5em;
 }
-@media (min-width: 1200px) {
+i + p, 
+i + span,
+i + i {
+    margin-left: .25em;
+}
+@media (min-width: 992px) {
     .page {
         position: absolute;
         top: 0;
@@ -56,26 +67,36 @@ p {
 
     margin-bottom: .75em;
 }
-.section-title {
-    font-size: 1.25em;
+
+.page-section {
+    padding-top: 5em;
+    padding-bottom: 1em;
+}
+.page-section .section-title {
+    font-size: 2em;
     font-family: 'Nunito', sans-serif;
     font-weight: bolder;
     text-align: center;
+    letter-spacing: -.05em;
+    text-transform: uppercase;
 
-    margin-top: .75em;
-    margin-bottom: .75em;
+    margin-top: .5em;
+    margin-bottom: 1.5em;
 }
-.section-subtitle {
-    font-family: 'Nunito', sans-serif;
+.page-section .section-subtitle,
+.card .card-subtitle {
+    font-family: 'Muli', sans-serif;
     font-weight: bolder;
     color: #4cd8b1;
     text-transform: uppercase;
     text-align: center;
 }
-@media (min-width: 1200px) {
-    .section-title {
+@media (min-width: 992px) {
+    .page-section .section-title {
         font-size: 2em;
+        
+        letter-spacing: 1px;
         margin-top: .5em;
-        margin-bottom: .5em;
+        margin-bottom: 2em;
     }
 }

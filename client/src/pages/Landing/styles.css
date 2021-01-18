@@ -1,13 +1,17 @@
 .landing-page {
-    background: url("../../assets/img/bg-right.svg") 100% 7em no-repeat !important;
+    background: url("../../assets/img/header-background.jpg") 90% -5em no-repeat !important;
 }
-section {
-    margin-top: 5em;
-    margin-bottom: 5em;
-}
- 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .landing-page {
         background: #fff !important;
     }
+    .landing-page .our-story {
+        margin-top: 0 !important;
+        padding-bottom: 7rem;
+        background: url('../../assets/img/story-background.jpg') center center no-repeat;
+        background-size: cover;
+    }
 }
+
+/* Configurando seçoes específicas */
+

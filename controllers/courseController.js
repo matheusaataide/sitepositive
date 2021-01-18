@@ -42,13 +42,14 @@ const CourseController = database => ({
     },
     getAll: async (req, res) => {
         try {
-            const { courses } = database;
+            const { courses, transformations } = database;
             const { limit, offset } = req.query;
 
             const list = await courses.findAll({
                 order: [['created_at', 'DESC']],
                 limit: limit || 3,
-                offset: offset || 0
+                offset: offset || 0,
+                include: [{ model: transformations }]
             });
 
             return res
@@ -67,7 +68,13 @@ const CourseController = database => ({
         try {
             const { courses } = database;
 
-            const newInstance = await courses.create(req.body); 
+            const data = {
+                ...req.body,
+                img: req.file ? req.file.filename : '',
+                createdById: req.userId,
+                updatedById: req.userId
+            }
+            const newInstance = await courses.create(data); 
 
             return res
                     .status(httpStatus.CREATED)

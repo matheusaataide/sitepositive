@@ -1,3 +1,5 @@
+const { Sequelize } = require(".");
+
 module.exports = (sequelize, DataType) => {
     const courses = sequelize.define('courses', {
         'id': {
@@ -11,10 +13,18 @@ module.exports = (sequelize, DataType) => {
         },
         'content': {
             type: DataType.STRING,
-            allowNull: false
+            defaultValue: ''
+        },
+        'url': {
+            type: DataType.STRING,
+            defaultValue: ''
+        },
+        'local': {
+            type: DataType.STRING,
+            defaultValue: ''
         },
         'status': {
-            type: DataType.STRING,
+            type: DataType.BOOLEAN,
             defaultValue: true
         },
         'img': {
@@ -22,8 +32,8 @@ module.exports = (sequelize, DataType) => {
             defaultValue: ''
         },
         'date': {
-            type: DataType.STRING,
-            defaultValue: ''
+            type: DataType.DATE,
+            defaultValue: DataType.NOW
         }
     }, {
         sequelize,

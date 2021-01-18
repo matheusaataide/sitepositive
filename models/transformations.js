@@ -7,14 +7,18 @@ module.exports = (sequelize, DataType) => {
         },
         'title': {
             type: DataType.STRING,
-            allowNull: false
+            defaultValue: ''
+        },
+        'img': {
+            type: DataType.STRING,
+            defaultValue: ''
         },
         'content': {
             type: DataType.STRING,
-            allowNull: false
+            defaultValue: ''
         },
         'status': {
-            type: DataType.STRING,
+            type: DataType.BOOLEAN,
             defaultValue: true
         }
     }, {

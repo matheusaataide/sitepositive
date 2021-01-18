@@ -8,7 +8,7 @@ const security = {
         if (user.password !== password) 
             return { auth: false, token: null };
 
-        const token = jwt.sign({ userId: user.id }, SECRET);
+        const token = jwt.sign({ id: user.id }, SECRET);
         return { auth: true, token };
     },
     authenticate: (req, res, next) => {
@@ -27,6 +27,7 @@ const security = {
             
             // se tudo estiver ok, salva no request para uso posterior
             req.userId = decoded.id;
+            
             next();
         });
     }

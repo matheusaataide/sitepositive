@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';
+import AboutUs from '../../sections/AboutUs';
 
 class WhoWeAre extends React.Component {
     render () {
@@ -16,6 +17,7 @@ class WhoWeAre extends React.Component {
                 <CustomNavbar />
                 <Container fluid className="flex-grow-1 flex-shrink-0">
                     <CustomNavbar />
+                    <AboutUs />
                 </Container>
                 <Footer />
             </div>

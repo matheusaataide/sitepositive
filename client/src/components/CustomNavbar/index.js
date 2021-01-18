@@ -1,22 +1,38 @@
 import React from 'react';
+import $ from 'jquery';
 import { Navbar, Nav, OverlayTrigger, Tooltip, Container } from 'react-bootstrap';
 
 import './styles.css';
 import Logo from '../../assets/img//logo/logo.png';
 
 class CustomNavbar extends React.Component {
-    listener = null;
+    
+    constructor (props){
+        super(props);
+        this.listener = null;
 
-    state = {
-        nav: false
-    };
+        this.state = {
+            nav: false,
+            shrink: props.shrink
+        };
+    }
+
+    componentDidMount() {
+        if(this.state.shrink === true) {
+            $(window).scroll(function() {
+                $('nav').toggleClass('transparent', $(this).scrollTop() < 80);
+            });
+        }
+            
+    }
 
     render () {
+        const { shrink } = this.state;
         return (
-        <Navbar bg="light" expand="lg" fixed="top" className="transparent">
+        <Navbar bg="light" expand="lg" fixed="top" className={ shrink === true ? "transparent" : ""}>
             <Container fluid>
-                <Navbar.Brand href="#home"><img src={Logo} alt="Positive Treinamentos" /></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" className="order-first"/>
+                <Navbar.Brand href="/"><img src={Logo} alt="Positive Treinamentos" /></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         <Nav.Link href="/">Início</Nav.Link>

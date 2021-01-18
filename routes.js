@@ -1,4 +1,5 @@
 const Express = require('express');
+const multer = require('multer');
 
 const database = require('./models');
 const UserController = require('./controllers/userController');
@@ -9,6 +10,8 @@ const SectionController = require('./controllers/sectionController');
 const ViewController = require('./controllers/viewController');
 const MessageController = require('./controllers/messageController');
 const security = require('./util/security');
+const uploadConfig = require('./config/uploadConfig');
+const MIMETYPES = require('./util/mimetypes.json');
 
 const router = Express.Router();
 
@@ -28,8 +31,15 @@ router.get('/', (req, res) => {
 const usersCtrl = UserController(database);
 router.get('/users/:id', usersCtrl.get);
 router.get('/users', usersCtrl.getAll);
-router.post('/users', security.authenticate, usersCtrl.save);
-router.put('/users/:id', usersCtrl.edit);
+let username = '';
+router.post('/users', 
+            security.authenticate,
+            multer(uploadConfig(MIMETYPES.images)).single('profilePic'),
+            usersCtrl.save);
+router.put('/users/:id',
+            security.authenticate,
+            multer(uploadConfig(MIMETYPES.images)).single('profilePic'),
+            usersCtrl.edit);
 router.delete('/users/:id', usersCtrl.delete);
 router.post('/login', usersCtrl.login);
 
@@ -50,13 +60,15 @@ router.delete('/testemonials/:id', testemonialsCtrl.delete);
 const coursesCtrl = CourseController(database);
 router.get('/courses/:id', coursesCtrl.get);
 router.get('/courses', coursesCtrl.getAll);
-router.post('/courses', coursesCtrl.save);
+router.post('/courses',
+            security.authenticate,
+            multer(uploadConfig(MIMETYPES.images)).single('img'),            
+            coursesCtrl.save);
 router.put('/courses/:id', coursesCtrl.edit);
 router.delete('/courses/:id', coursesCtrl.delete);
 
 const sectionsCtrl = SectionController(database);
-router.get('/sections/:id', sectionsCtrl.get);
-router.get('/sections', sectionsCtrl.getAll);
+router.get('/sections/:sectionName/:key', sectionsCtrl.get);
 router.post('/sections', sectionsCtrl.save);
 router.put('/sections/:id', sectionsCtrl.edit);
 router.delete('/sections/:id', sectionsCtrl.delete);

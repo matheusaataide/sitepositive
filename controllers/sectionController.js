@@ -8,13 +8,13 @@ const SectionController = database => ({
     },
     get: async (req, res) => {
         const { sections } = database;
-        const section = await sections.findByPk(req.params.id);
+
+        const section = await sections.findAll({
+            where: req.params,
+            order: [['created_at', 'DESC']]
+        });
         return res.status(httpStatus.OK).json(section);
     },
-    getAll: async (req, res) => {
-            const { sections } = database;
-            return res.status(httpStatus.OK).json(await sections.findAll());
-        },
     save: async (req, res) => {
         const { sections } = database;
 

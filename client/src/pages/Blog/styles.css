@@ -1,0 +1,85 @@
+.page.blog-post > .container{
+    padding-top: 8em;
+}
+.page.blog-post .content  img {
+   max-width: 80%;
+   margin-left: 10%;
+}
+.page.blog-post .content .section-title {
+    color: #000;
+    font-size: 2em;
+    text-align: center;
+
+    margin: 1em 0;
+}
+.page.blog-post .content .section-subtitle {
+        font-weight: bolder;
+        font-size: 1.2em;
+        letter-spacing: .05em;
+        
+        text-transform: uppercase;
+        text-align: center;
+        color: #4cd8b1 !important;
+    
+        margin-top: 1.5em;
+        margin-bottom: 0;
+    }
+.page.blog-post .content .lead {
+    text-align: center;
+    text-indent: 0;
+}
+.page.blog-post .content p {
+    text-indent: 1.5em;
+}
+
+.page.blog-post span + span,
+.page.blog-post i + time {
+    margin-left: .4em;
+}
+@media (min-width: 992px){
+    .page.blog-post .content {
+        padding: 5em 2em;
+        margin-top: 5em;
+        background-color: #fff;
+        border: solid 2px #2ba2cc;
+        border-radius: 1em;
+
+        -webkit-box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
+    }
+    .page.blog-post .content img {
+        float: left;
+        max-width: 400px;
+        margin-right: 3em;
+        margin-bottom: .8em;
+        margin-left: 0;
+        border-radius: 1em !important;
+    }
+    .page.blog-post .content .section-title {
+        font-size: 2em;
+        font-weight: bolder;
+        color: #000;
+        text-align: left;
+        margin-top: .2em;
+    line-height: 1.3em;
+    margin-bottom: .5em;
+    }
+    .page.blog-post .content .section-subtitle {
+        font-size: 1.2em;
+        text-align: left;
+        margin-top: .25em;
+        margin-bottom: .5em;
+    }
+    .page.blog-post .content .lead {
+        font-size: 1em !important;
+        text-align: left;
+        margin-bottom: 3em;
+    }
+    .page.blog-post .content hr {
+        display: none;
+    }
+    .page.blog-post .content p {
+        font-size: 1.2em !important;
+        text-align: justify;
+    }
+}
