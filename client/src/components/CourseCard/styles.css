@@ -16,6 +16,9 @@
     -webkit-box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
     box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
 }
+.card.course-card .card-body p {
+    text-indent: 0;
+}
 .card.course-card img {
     border-radius: 1em 1em 0 0 !important;
 }

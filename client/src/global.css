@@ -10,6 +10,8 @@ body {
     color: #fff;
     font: 700 0.75rem/0 "Nunito", sans-serif;
     text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
     transition: all 0.2s;
 }
 .btn.btn-primary {
@@ -31,11 +33,12 @@ body {
 .form-control-select {
     display: block;
     width: 100%;
-    padding-top: 1.25rem;
-    padding-bottom: 0.125rem;
+    height: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
     padding-left: 1.3125rem;
     border: 1px solid #cbcbd1;
-    border-radius: 1em;
+    border-radius: .5em;
     background-color: #ffffff;
     color: #6b747b;
     font: 400 0.875rem/1.875rem "Nunito", sans-serif;
@@ -46,13 +49,13 @@ body {
     display: block;
     width: 100%;
     height: 14rem;
-    padding-top: 1.25rem;
-    padding-left: 1.3125rem;
+    padding-top: 0.5em;
+    padding-left: 1.375em;
     border: 1px solid #cbcbd1;
-    border-radius: 1em;
+    border-radius: .5em;
     background-color: #ffffff;
     color: #6b747b;
-    font: 400 0.875rem/1.75rem "Open Sans", sans-serif;
+    font: 400 0.875rem/1.875rem "Nunito", sans-serif;
     transition: all 0.2s;
 }
 .form-control-input:focus,
@@ -60,17 +63,19 @@ body {
 .form-control-textarea:focus {
     border: solid 2px #2ba2cc;
     outline: 0; 
+    box-shadow: 0;
 }
 .label-control {
-    position: absolute;
-    top: 0.875rem;
-    left: 1.375rem;
-    color: #7d838a;
+    padding-left: 1.375em;
+    margin-bottom: 0;
+    color: #2ba2cc;
     opacity: 1;
-    font: 400 0.875rem/1.375rem "Nunito", sans-serif;
+    font: 700 0.875rem/1.375rem "Nunito", sans-serif;
+    text-transform: uppercase;
     cursor: text;
     transition: all 0.2s ease;
 }
+/*
 .form-control-input:focus + .label-control,
 .form-control-input.notEmpty + .label-control,
 .form-control-textarea:focus + .label-control,
@@ -85,6 +90,7 @@ body {
 .form-control-textarea:focus + .label-control {
     color: #2ba2cc;
 }
+*/
 
 img {
     border-radius: 1em !important;
@@ -111,8 +117,8 @@ i + i {
         width: 100vw;
         padding-top: 6em;
 
-        background: url("./assets/img/header-background.jpg") center center no-repeat;
-        background-size: cover;
+        background: url("./assets/img/header-background.jpg") center 0 no-repeat;
+        background-size: contain;
     }
     .page .page-title {
         font-size: 2em;
@@ -125,7 +131,7 @@ i + i {
         font-size: 2em;
         text-align: right;
         color: #fff;
-        margin-bottom: 5em;
+        margin-bottom: 3em;
     }
 }
 

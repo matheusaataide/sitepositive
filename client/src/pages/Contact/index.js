@@ -3,27 +3,24 @@ import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
-import AboutUs from '../../sections/AboutUs';
-import OurStory from '../../sections/OurStory';
-import WeBelieve from '../../sections/WeBelieve';
+import ContactUs from '../../sections/ContactUs';
 import Footer from '../../components/Footer';
 
 import './styles.css';
 
-class WhoWeAre extends React.Component {
+
+class Contact extends React.Component {
     render () {
         return (
             <div className="page who-we-are d-flex flex-column">
                 <Helmet>
-                    <title>Positive Treinamentos - Quem somos</title>
+                    <title>Positive Treinamentos - Entre em contato</title>
                 </Helmet>
 
-                <CustomNavbar shrink />
+                <CustomNavbar />
                 <Container fluid className="flex-grow-1 flex-shrink-0">
                     <CustomNavbar />
-                    <AboutUs/>
-                    <OurStory />
-                    <WeBelieve />
+                    <ContactUs />
                 </Container>
                 <Footer />
             </div>
@@ -31,4 +28,4 @@ class WhoWeAre extends React.Component {
     }
 }
 
-export default WhoWeAre;
+export default Contact;

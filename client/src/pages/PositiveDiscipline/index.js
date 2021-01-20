@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Container, Row, Col, Image, Card, Breadcrumb } from 'react-bootstrap';
+import { Container, Row, Col, Image} from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';

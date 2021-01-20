@@ -6,7 +6,7 @@ import CourseCard from '../../components/CourseCard';
 
 import './styles.css';
 
-export default class Schedule extends React.Component {
+export default class NextEvents extends React.Component {
     constructor (props) {
         super(props);
 

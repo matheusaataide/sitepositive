@@ -9,12 +9,18 @@
 .contact-us .list-unstyled {
     margin-bottom: 1.875em;
 }
-
+.contact-us .cartoon {
+    display: none;
+}
 @media (min-width: 992px) {
     .contact-us .section-wrapper {
         padding: 5em 2em;
     }
     .contact-us form {
         margin-left: 2.75em;
+    }
+    .contact-us .cartoon {
+        display: block;
+        max-height: 110vh;
     }
 }

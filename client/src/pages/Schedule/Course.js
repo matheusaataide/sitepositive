@@ -13,11 +13,11 @@ import baseURL from '../../util/baseUrl';
 
 import './styles.css';
 
-class BlogPost extends React.Component {
+class Course extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            post: {
+            course: {
                 id: 0,
                 title: "",
                 content: "",
@@ -31,19 +31,19 @@ class BlogPost extends React.Component {
     componentDidMount () {
         const { match: { params }} = this.props;
         
-        axios.get(`/posts/${params.postId}`)
+        axios.get(`/courses/${params.courseId}`)
             .then(res => {
-                const post = res.data;
-                this.setState({ post });
+                const course = res.data;
+                this.setState({ course });
             }); 
     }
 
     render () {
-        const { post } = this.state;
+        const { course } = this.state;
         return (
-            <div className="page blog-post d-flex flex-column">
+            <div className="page course d-flex flex-column">
                 <Helmet>
-                    <title>Positive Treinamentos - Blog - {post.title}</title>
+                    <title>Positive Treinamentos - {course.title}</title>
                 </Helmet>
 
                 <CustomNavbar />
@@ -51,17 +51,17 @@ class BlogPost extends React.Component {
                     <Row>
                         <Col lg={{ span: 10, offset: 1}}>
                             <Image rounded 
-                                    src={`${baseURL}/${post.img}`} alt={post.title} />
+                                    src={`${baseURL}/${course.img}`} alt={course.title} />
                         
                             <h2 className="section-subtitle">Artigo</h2>
-                            <h1 className="section-title">{ post.title }</h1>
+                            <h1 className="section-title">{ course.title }</h1>
                             <p className="lead">
                                 <span>por <Link to="/quem-somos">Positive Treinamentos</Link></span>
-                                <span><TimeAgo date={ new Date(post.createdAt) } timeStyle="round"/></span>
+                                <span><TimeAgo date={ new Date(course.createdAt) } timeStyle="round"/></span>
                                 <hr />
                             </p>
                             <div>
-                                { parseHtml(post.content)}
+                                { parseHtml(course.content)}
                             </div>                          
                         </Col>
                     </Row>
@@ -72,4 +72,4 @@ class BlogPost extends React.Component {
     }
 }
 
-export default BlogPost;
+export default Course;

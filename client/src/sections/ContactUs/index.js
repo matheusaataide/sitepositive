@@ -1,17 +1,14 @@
 import React from 'react';
 import $ from 'jquery';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
 
 import'./styles.css';
+import ImageCartoonPatricia from '../../assets/img/caricaturas/patricia.png';
 
 class ContactUs extends React.Component {
-    constructor (props) {
-        super(props);
-    }
-
     componentDidMount () {
         $("input, textarea").keyup(function(){
-            if ($(this).val() != '') {
+            if ($(this).val() !== '') {
                 $(this).addClass('notEmpty');
             } else {
                 $(this).removeClass('notEmpty');
@@ -21,73 +18,75 @@ class ContactUs extends React.Component {
 
     render(){
         return (
-        <section className="contact-us">
+        <section className="contact-us page-section">
             <Container>
                 <div className="section-wrapper">
                     <Row>
-                        <Col lg={6}>
-                            <div className="text-container">
-                                <h2>Just Fill Out The Form To Schedule A Quick Call</h2>
-                                <p>Zigo is one of the most experienced business software integrators in the market. Discover what it can do for your company with just a few mouse clicks.</p>
-                                <ul className="list-unstyled li-space-lg">
-                                    <li className="media">
-                                        <i className="fas fa-square"></i><div className="media-body">It's easy to setup a meeting with our consultants</div>
-                                    </li>
-                                    <li className="media">
-                                        <i className="fas fa-square"></i><div className="media-body">Improve your business flow with the right software</div>
-                                    </li>
-                                    <li className="media">
-                                        <i className="fas fa-square"></i><div className="media-body">Better productivity through the entire supply chain</div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </Col>
-                        <Col lg={6}>
+                        <Col xs={12} lg={{ span: 6, offset: 2}}>
                             <div className="form-container">
-                                <form id="requestForm">
-                                    <div className="form-group">
-                                        <input 
+                                <h2 className="section-title">Fale conosco</h2>
+                                <Form>
+                                    <Form.Group controlId="contactUs.name">
+                                        <Form.Label htmlFor="rname" className="label-control">Nome</Form.Label>
+                                        <Form.Control required
                                             type="text"
                                             className="form-control-input" 
                                             id="rname" 
-                                            name="rname" 
-                                            required />
-                                        <label className="label-control" for="rname">Full name</label>
-                                        <div className="help-block with-errors"></div>
-                                    </div>
-                                    <div className="form-group">
-                                        <input 
+                                            name="name"
+                                            placeholder="Seu nome" 
+                                            />
+                                    </Form.Group>
+                                    <Form.Group controlId="contactUs.email">
+                                        <Form.Label htmlFor="remail" className="label-control">E-mail</Form.Label>
+                                        <Form.Control required
                                             type="email" 
                                             className="form-control-input" 
                                             id="remail" 
                                             name="remail" 
-                                            required />
-                                        <label className="label-control" for="remail">Email</label>
-                                        <div className="help-block with-errors"></div>
-                                    </div>
-                                    <div className="form-group">
-                                        <input 
+                                            placeholder="Seu email"
+                                            />
+                                    </Form.Group>
+                                    <Form.Group controlId="contactUs.phone">
+                                        <Form.Label htmlFor="rphone" className="label-control">Número de telefone</Form.Label>
+                                        <Form.Control required
                                             type="text" 
                                             className="form-control-input" 
                                             id="rphone" 
-                                            name="rphone"
-                                            required />
-                                        <label className="label-control" for="rphone">Phone</label>
-                                        <div className="help-block with-errors"></div>
-                                    </div>
+                                            name="whatsapp"
+                                            placeholder="Seu número de telefone/whatsapp"
+                                            />
+                                    </Form.Group>
+                                    <Form.Group controlId="contactUs.msg">
+                                        <Form.Label htmlFor="rmsg" className="label-control">Mensagem</Form.Label>
+                                        <Form.Control required 
+                                            as="textarea"
+                                            className="form-control-textarea" 
+                                            id="msg" 
+                                            name="msg" 
+                                            rows={3} 
+                                            placeholder="Digite a mensagem..."
+                                            />
+                                    </Form.Group>
                                     <div className="form-group">
-                                        <textarea className="form-control-textarea" id="msg" name="msg" rows="3" required />
-                                        <label className="label-control" for="msg">Mensagem</label>
-                                        <div className="help-block with-errors"></div>
-                                    </div>
-                                    <div className="form-group">
-                                        <Button type="submit" className="form-control-submit-button">Submit</Button>
+                                        <Button
+                                            type="submit" 
+                                            className="form-control-submit-button"
+                                            style={{
+                                                marginTop: '2em'
+                                            }}>
+                                                Enviar
+                                        </Button>
                                     </div>
                                     <div className="form-message">
                                         <div id="rmsgSubmit" className="h3 text-center hidden"></div>
                                     </div>
-                                </form>
+                                </Form>
                             </div> 
+                        </Col>
+                        <Col lg={3}>
+                            <Image className="img-fluid cartoon" 
+                                src={ImageCartoonPatricia}
+                                alt="Caricatura de Patrícia" />
                         </Col>
                     </Row>
                 </div>

@@ -1,6 +1,9 @@
 .landing-page {
     background: url("../../assets/img/header-background.jpg") 90% -5em no-repeat !important;
 }
+.landing-page .schedule {
+    background-color: #f7f7f7;
+}
 @media (min-width: 992px) {
     .landing-page {
         background: #fff !important;
