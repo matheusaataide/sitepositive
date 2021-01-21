@@ -8,7 +8,7 @@ const ProfileCard = props => (
     <Card className="profile-card">
         <Card.Body>
             <Image roundedCircle fluid
-                src={`${baseUrl}/${props.user.profilePic}`} 
+                src={`${baseUrl}/uploads/${props.user.profilePic}`} 
                 alt={props.user.name} />
             <Card.Title>{props.user.name}</Card.Title>
             <hr className="cell-divide-hr" />

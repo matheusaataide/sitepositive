@@ -26,7 +26,7 @@ const TestemonialSlider = testemonials => (
             onSlideChange={() => console.log('slide change')}>
             <SwiperSlide className="blog-slider__item">
                 <div className="blog-slider__img">
-                    <Image src={`${baseURL}/1610935329279-rafael.jpg`} alt="" />
+                    <Image src={`${baseURL}/uploads/1610935329279-rafael.jpg`} alt="" />
                 </div>
                 <div className="blog-slider__content">
                     <span className="blog-slider__code">26 December 2019</span>
@@ -37,7 +37,7 @@ const TestemonialSlider = testemonials => (
             </SwiperSlide>
             <SwiperSlide className="blog-slider__item">
                 <div className="blog-slider__img">
-                    <Image src={`${baseURL}/1610935329279-rafael.jpg`} alt="" />
+                    <Image src={`${baseURL}/uploads/1610935329279-rafael.jpg`} alt="" />
                 </div>
                 <div className="blog-slider__content">
                     <span className="blog-slider__code">26 December 2019</span>
@@ -48,7 +48,7 @@ const TestemonialSlider = testemonials => (
             </SwiperSlide>
             <SwiperSlide className="blog-slider__item">
                 <div className="blog-slider__img">
-                    <Image src={`${baseURL}/1610935329279-rafael.jpg`} alt="" />
+                    <Image src={`${baseURL}/uploads/1610935329279-rafael.jpg`} alt="" />
                 </div>
                 <div className="blog-slider__content">
                     <span className="blog-slider__code">26 December 2019</span>

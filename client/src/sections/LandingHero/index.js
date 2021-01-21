@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 import './styles.css';
+import baseURL from '../../util/baseUrl';
 
 class LandingHero extends React.Component {
 	constructor (props) {
@@ -18,7 +19,7 @@ class LandingHero extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('/sections/intro/img')
+        axios.get(`${baseURL}/api/sections/intro/img`)
             .then(res => {
 				const infos = res.data;
 
@@ -27,7 +28,7 @@ class LandingHero extends React.Component {
 					img: _.head(infos).value
 				 });
 			}); 
-        axios.get('/sections/intro/text')
+        axios.get(`${baseURL}/api/sections/intro/text`)
             .then(res => {
 				const infos = res.data;
 
@@ -36,7 +37,7 @@ class LandingHero extends React.Component {
 					text: _.head(infos).value
 				 });
 			});
-		axios.get('/sections/intro/title')
+		axios.get(`${baseURL}/api/sections/intro/title`)
             .then(res => {
 				const infos = res.data;
 

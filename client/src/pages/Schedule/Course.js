@@ -31,7 +31,7 @@ class Course extends React.Component {
     componentDidMount () {
         const { match: { params }} = this.props;
         
-        axios.get(`/courses/${params.courseId}`)
+        axios.get(`${baseURL}/api/courses/${params.courseId}`)
             .then(res => {
                 const course = res.data;
                 this.setState({ course });
@@ -51,7 +51,7 @@ class Course extends React.Component {
                     <Row>
                         <Col lg={{ span: 10, offset: 1}}>
                             <Image rounded 
-                                    src={`${baseURL}/${course.img}`} alt={course.title} />
+                                    src={`${baseURL}/uploads/${course.img}`} alt={course.title} />
                         
                             <h2 className="section-subtitle">Artigo</h2>
                             <h1 className="section-title">{ course.title }</h1>

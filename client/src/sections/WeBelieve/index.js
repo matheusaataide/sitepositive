@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 import htmlParser from 'react-html-parser';
-
 import { Container, Row, Col, Image } from 'react-bootstrap';
+
+import baseURL from '../../util/baseUrl';
 import './styles.css';
 
 class WeBelieve extends React.Component {
@@ -18,7 +19,7 @@ class WeBelieve extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('/sections/we-believe/img')
+        axios.get(`${baseURL}/api/sections/we-believe/img`)
             .then(res => {
 				const infos = res.data;
 
@@ -27,7 +28,7 @@ class WeBelieve extends React.Component {
 					img: _.head(infos).value
 				 });
 			}); 
-		axios.get('/sections/we-believe/text')
+		axios.get(`${baseURL}/api/sections/we-believe/text`)
             .then(res => {
 				const infos = res.data;
 
@@ -36,7 +37,7 @@ class WeBelieve extends React.Component {
 					text: _.head(infos).value
 				 });
 			});
-		axios.get('/sections/we-believe/title')
+		axios.get(`${baseURL}/api/sections/we-believe/title`)
             .then(res => {
 				const infos = res.data;
 

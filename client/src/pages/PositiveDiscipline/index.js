@@ -31,7 +31,7 @@ class Blog extends React.Component {
                                 }}>Patrícia Carvalho</Link></span>
                             </p>
                             <Image 
-                                src={`${baseURL}/dp.jpg`} 
+                                src={`${baseURL}/uploads/dp.jpg`} 
                                 alt="Disciplina Positiva"
                                 style={{
                                     maxWidth: '50%',

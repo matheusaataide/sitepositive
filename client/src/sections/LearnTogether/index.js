@@ -3,7 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 
 import './styles.css';
+import baseURL from '../../util/baseUrl';
 import PostCard from '../../components/PostCard';
+
 
 export default class LearnTogether extends React.Component {
     constructor (props) {
@@ -17,7 +19,7 @@ export default class LearnTogether extends React.Component {
     }
 
     componentDidMount () {
-        axios.get(`/posts?limit=${this.state.limit}&offset=${this.state.offset}`)
+        axios.get(`${baseURL}/api/posts?limit=${this.state.limit}&offset=${this.state.offset}`)
             .then(res => {
                 const posts = res.data;
                 this.setState({ posts });

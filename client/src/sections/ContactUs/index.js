@@ -1,9 +1,10 @@
-import React, {set} from 'react';
+import React  from 'react';
 import axios from 'axios';
 import $ from 'jquery';
 import { Container, Row, Col, Button, Image, Form } from 'react-bootstrap';
 
 import'./styles.css';
+import baseURL from '../../util/baseUrl';
 import ImageCartoonPatricia from '../../assets/img/caricaturas/patricia.png';
 
 class ContactUs extends React.Component {
@@ -30,7 +31,7 @@ class ContactUs extends React.Component {
 
         const { name, email, whatsapp, content } = this.state;
 
-        axios.post('/messages', { name, email, whatsapp, content })
+        axios.post(`${baseURL}/api/messages`, { name, email, whatsapp, content })
             .then(response => {
                 console.log(response);
                 $('#rmsgSubmit').text('Recebemos sua mensagem!');

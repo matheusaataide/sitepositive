@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import './styles.css';
 import ProfileCard from '../../components/ProfileCard';
+import baseURL from '../../util/baseUrl';
 
 class AboutUs extends React.Component {
     constructor (props) {
@@ -17,7 +18,7 @@ class AboutUs extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('/users')
+        axios.get(`${baseURL}/api/users`)
             .then(res => {
                 const users = res.data;
                 this.setState({ users });

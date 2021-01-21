@@ -14,7 +14,7 @@ const PostCard = props => {
 
     return (
         <Card className="post-card">
-            <Card.Img src={`${baseUrl}/${post.img}`} variant="top" alt={post.title} />
+            <Card.Img src={`${baseUrl}/uploads/${post.img}`} variant="top" alt={post.title} />
             <Card.Body>
                 <Row>
                     <Col><Card.Subtitle>Artigo</Card.Subtitle></Col>

@@ -2,9 +2,11 @@ import React from 'react';
 import axios from 'axios'; 
 import { Container, Row, Col } from 'react-bootstrap';
 
-import CourseCard from '../../components/CourseCard';
+
 
 import './styles.css';
+import CourseCard from '../../components/CourseCard';
+import baseURL from '../../util/baseUrl';
 
 export default class NextEvents extends React.Component {
     constructor (props) {
@@ -18,7 +20,7 @@ export default class NextEvents extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('/courses')
+        axios.get(`${baseURL}/api/courses`)
             .then(res => {
                 const courses = res.data;
                 this.setState({ courses });

@@ -15,7 +15,7 @@ const CourseCard = props => {
     return (
         <Card className="course-card">
             <Card.Img 
-                src={`${ baseURL }/${ course.img }`} 
+                src={`${ baseURL }/uploads/${ course.img }`} 
                 variant="top" 
                 alt={ course.title } />
             <Card.Body>

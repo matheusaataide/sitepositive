@@ -6,6 +6,7 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 
 import './styles.css';
 import ImageCartoonRafael from "../../assets/img/caricaturas/rafael.png";
+import baseURL from '../../util/baseUrl';
 
 
 class OurStory extends React.Component {
@@ -18,7 +19,7 @@ class OurStory extends React.Component {
     }
 
     componentDidMount () {
-        axios.get('/sections/our-story/text')
+        axios.get(`${baseURL}/api/sections/our-story/text`)
             .then(res => {
 				const infos = res.data;
 
