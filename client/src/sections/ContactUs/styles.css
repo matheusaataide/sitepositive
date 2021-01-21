@@ -3,7 +3,15 @@
 }
 .contact-us h2,
 .contact-us p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5em !important;
+}
+.contact-us .form-control-input,
+.contact-us .form-control-textarea,
+.contact-us .form-group {
+    text-align: center;
+}
+.contact-us .label-control {
+    padding-left: 0;
 }
 
 .contact-us .list-unstyled {

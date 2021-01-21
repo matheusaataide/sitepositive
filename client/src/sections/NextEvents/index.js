@@ -36,7 +36,7 @@ export default class NextEvents extends React.Component {
                             <h2 className="section-title">Próximos eventos</h2>
                         </Col>
                     </Row>
-                    <Row className={`has-${courses.length}`}>
+                    <Row className={`has-${courses.length}` }>
                     { 
                         courses.map(course => {
                             return (

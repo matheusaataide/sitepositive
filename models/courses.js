@@ -14,7 +14,7 @@ module.exports = (sequelize, DataType) => {
         'content': {
             type: DataType.STRING,
             defaultValue: ''
-        },
+        }, 
         'url': {
             type: DataType.STRING,
             defaultValue: ''

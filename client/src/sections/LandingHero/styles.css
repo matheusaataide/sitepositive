@@ -8,7 +8,9 @@
     padding-top: 8em;
 }
 .header h1 {
-    font: bold 2em "Nunito", sans-serif;
+    font-size: 2em;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold; 
     text-transform: uppercase;
     line-height: 1.5em;
     color: #fff;
@@ -38,8 +40,7 @@
         text-align: left;
     }
     .header h1 {
-        font-size: 3em;
-        font-family: 'Nunito', sans-serif !important;
+        font-size: 3em !important;
         font-weight: 700;
         line-height: 1.4em;
         text-transform: none;

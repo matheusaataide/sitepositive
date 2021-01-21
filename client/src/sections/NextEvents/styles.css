@@ -12,6 +12,9 @@
     padding-right: 1.5em;
 }
 @media (min-width: 992px) {
+    .schedule > .container > .row.has-1 {
+        text-align: center !important;
+    }
     .schedule > .container > .row.has-2 > .col:nth-child(1){
         text-align: right;
     }

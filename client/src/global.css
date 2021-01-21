@@ -7,9 +7,19 @@
     outline: 0;
     box-sizing: border-box;
     font-family: 'Nunito', 'Calibri', sans-serif;
+    font-size: 1em;
+    color: rgb(128, 128,128);
 }
 body {
     background-color: white;
+}
+img {
+    border-radius: 1em !important;
+}
+p {
+    line-height: 1.75em;
+    text-indent: 1.5em;
+    margin-bottom: 1.5em;
 }
 .bg-primary {
     background-color: var(--bg-secondary) !important;
@@ -26,16 +36,21 @@ body {
     font: 700 0.75rem/0 "Nunito", sans-serif;
     text-decoration: none;
     text-transform: uppercase;
-    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
-    transition: all 0.2s;
+    box-shadow: 0 10px 5px -5px rgba(43, 162, 204, 0.2);
+    transition: all .2s;
 }
 .btn.btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background: linear-gradient(147deg, #01bfd9 0%, #2ba2cc 74%);
+    border-color: transparent;
+    transition: all .2s;
+}
+.btn.btn-primary,
+.btn.btn-primary > * {
+    color: #fff !important;
 }
 .btn.btn-primary:hover {
-    background-color: #fff;
-    color: var(--color-primary);
+    background: linear-gradient(147deg, #01bfd9 26%, #2ba2cc 100%);
+    color: white;
     text-decoration: none;
 }
 
@@ -60,6 +75,7 @@ body {
     box-shadow: none;
     transition: all .2s cubic-bezier(.68,-.55,.265,1.55);
 }
+
 .form-control-textarea {
     display: block;
     width: 100%;
@@ -72,6 +88,11 @@ body {
     color: #6b747b;
     font: 400 0.875rem/1.875rem "Nunito", sans-serif;
     transition: all 0.2s;
+}
+.form-control-input::placeholder,
+.form-control-select::placeholder,
+.form-control-textarea::placeholder {
+    color: #c7c7c7;
 }
 .form-control-input:focus,
 .form-control-select:focus,
@@ -107,18 +128,7 @@ body {
 }
 */
 
-img {
-    border-radius: 1em !important;
-}
-p {
-    font-size: 1em !important;
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.75em;
-    text-indent: 1.5em;
-    color: rgb(128, 128,128);
-    
-    margin-bottom: 1.5em;
-}
+
 i + p, 
 i + span,
 i + i {

@@ -5,9 +5,11 @@ import { Container, Row, Col, Image} from 'react-bootstrap';
 
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';
+import TestemonialSlider from '../../components/TestemonialSlider';
 import baseURL from '../../util/baseUrl';
 
 import './styles.css';
+
 
 class Blog extends React.Component {
     render () {
@@ -49,24 +51,22 @@ class Blog extends React.Component {
                             </p>
                             <p>
                                 A Disciplina Positiva possui os seguintes critérios:
-                                <ul>
-                                    <li>Respeito mútuo;</li>
-                                    <li>Desenvolve senso de aceitação e importância;</li>
-                                    <li>É efetiva a longo prazo;</li>
-                                    <li>Ensina habilidades sociais e de vida;</li>
-                                    <li>Nos incentiva a descobrir capacidades e poder pessoal.</li>
-                                </ul>    
-                            </p>  
-                            <p>
-                                <b>Patrícia Carvalho</b><br />
-                                Educadora para Pais, Professores, Escolas e Empresas em Disciplina Positiva pela Positive Discipline Association 
-                            </p>          
+                            </p>
+                            <ul>
+                                <li>Respeito mútuo;</li>
+                                <li>Desenvolve senso de aceitação e importância;</li>
+                                <li>É efetiva a longo prazo;</li>
+                                <li>Ensina habilidades sociais e de vida;</li>
+                                <li>Nos incentiva a descobrir capacidades e poder pessoal.</li>
+                            </ul>           
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                        </Col>
                         <Col></Col>
+                        <Col></Col>
+                    </Row>
+                    <Row>
+                        <TestemonialSlider testemonials={[]}/>
                     </Row>
                 </Container>
                 <Footer />

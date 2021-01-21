@@ -20,6 +20,7 @@ const MessageController = database => ({
         },
     save: async (req, res) => {
         const { messages } = database;
+        console.log(req.body);
 
         const msg = await messages.create(req.body); 
 

@@ -6,7 +6,6 @@ import { Container, Row, Col, Image } from 'react-bootstrap';
 import TimeAgo from 'react-time-ago';
 import parseHtml from 'react-html-parser';
 
-
 import CustomNavbar from '../../components/CustomNavbar';
 import Footer from '../../components/Footer';
 import baseURL from '../../util/baseUrl';
@@ -55,11 +54,11 @@ class BlogPost extends React.Component {
                         
                             <h2 className="section-subtitle">Artigo</h2>
                             <h1 className="section-title">{ post.title }</h1>
-                            <p className="lead">
+                            <div className="lead">
                                 <span>por <Link to="/quem-somos">Positive Treinamentos</Link></span>
                                 <span><TimeAgo date={ new Date(post.createdAt) } timeStyle="round"/></span>
                                 <hr />
-                            </p>
+                            </div>
                             <div>
                                 { parseHtml(post.content)}
                             </div>                          

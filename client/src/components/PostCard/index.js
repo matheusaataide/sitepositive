@@ -19,10 +19,10 @@ const PostCard = props => {
                 <Row>
                     <Col><Card.Subtitle>Artigo</Card.Subtitle></Col>
                     <Col>
-                        <p>
+                        <div>
                             <i className="far fa-clock"></i>
                             <TimeAgo date={date} timeStyle="round"/>
-                        </p>
+                        </div>
                     </Col>
                 </Row>
                 <Card.Title>{ post.title }</Card.Title>
