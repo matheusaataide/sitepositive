@@ -36,7 +36,7 @@ const CourseCard = props => {
             </Card.Body>
             <div className="button-container">
                 <Link className="btn btn-primary" 
-                    to={`blog/${course.id}/${slugify(transformation.title)}`}>
+                    to={`agenda/${course.id}/${slugify(course.title)}`}>
                         Saber mais <span style={{ marginLeft: '.25em' ,fontSize: '1.5em' }}>»</span>
                 </Link>
             </div>

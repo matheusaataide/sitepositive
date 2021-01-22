@@ -20,19 +20,22 @@ const MessageController = database => ({
         },
     save: async (req, res) => {
         const { messages } = database;
-        console.log(req.body);
 
         const msg = await messages.create(req.body); 
 
         const to = { 
             "name": "Positive Treinamentos",
-            "email": process.env.TO_EMAIL || 'positivetreinamentos@gmail.com'
+            "email": process.env.TO_EMAIL || 'contato@matheusataide.com.br'
         }
-        email.send(
+        try {
+            email.send(
                     [to],
                     "Recebemos uma nova mensagem no site",
                     newMsgTemplate(msg.content)
                 );
+        } catch (err) {
+            console.table(err);    
+        }
 
         return res.status(httpStatus.CREATED).json(msg);
     },
