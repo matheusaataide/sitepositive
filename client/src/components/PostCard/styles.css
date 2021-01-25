@@ -44,6 +44,9 @@
     color: rgba(128, 128, 128, .75);
     text-align: right;
 }
+.card.post-card .time {
+    text-align: end;
+}
 .card.post-card .button-container {
     margin-top: -1.375rem;
     text-align: center;
@@ -60,6 +63,7 @@
         vertical-align: top;
     }
     .card.post-card .card-body {
+        height: 11em;
         padding: 1.2rem 1.2rem 1.75rem 1.2rem;
     }
     .card.post-card .card-title {

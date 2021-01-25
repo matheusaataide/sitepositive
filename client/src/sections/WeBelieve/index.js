@@ -61,7 +61,7 @@ class WeBelieve extends React.Component {
 								<div className="icon-wrap"><span className="flaticon-vector"></span></div>
 								
 							</div>
-							<Image fluid src={img} alt={title} />
+							<Image fluid src={`${baseURL}/uploads/${img}`} alt={title} />
 						</div>
 					</Col>
 					<Col xs={12} lg={6}>

@@ -6,12 +6,14 @@
     margin: 0;
     outline: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', 'Calibri', sans-serif;
-    font-size: 1em;
-    color: rgb(128, 128,128);
 }
 body {
     background-color: white;
+    font-family: 'Nunito', 'Calibri', sans-serif;
+    font-size: 1em;
+    color: rgb(128, 128,128);
+
+    scroll-behavior: smooth;
 }
 img {
     border-radius: 1em !important;
@@ -24,8 +26,6 @@ p {
 .bg-primary {
     background-color: var(--bg-secondary) !important;
 }
-
-
 .btn {
     display: inline-block;
     padding: 1.1875rem 1.875rem 1.1875rem 1.875rem;
@@ -52,6 +52,19 @@ p {
     background: linear-gradient(147deg, #01bfd9 26%, #2ba2cc 100%);
     color: white;
     text-decoration: none;
+}
+.btn.btn-link {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+.btn.btn.btn-link,
+.btn.btn-link > * {
+    color: var(--color-primary) !important;
+}
+.btn.btn.btn-link:hover,
+.btn.btn-link:hover > * {
+    color: var(--color-primary);
 }
 
 /* Formulários */
@@ -134,6 +147,34 @@ i + span,
 i + i {
     margin-left: .25em;
 }
+
+/**** PÁGINAS ****/
+.page > .container {
+    padding-top: 7em;
+    min-height: 100vh;
+}
+.page .page-title,
+.page .section-title {
+    display: block;
+    margin-top: .5em;
+    margin-bottom: 2em;
+    padding: 0 .5em;
+    width: 100%;
+
+    font-size: 2em;
+    font-weight: bolder;
+    letter-spacing: -.05em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+}
+.page .page-section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.page .page-content {
+    text-align: justify;
+}
 @media (min-width: 992px) {
     .page {
         position: absolute;
@@ -145,25 +186,24 @@ i + i {
         background: url("./assets/img/header-background.jpg") center 0 no-repeat;
         background-size: contain;
     }
+    .page .page-title,
+    .page .section-title {
+        letter-spacing: normal;
+    }
     .page .page-title {
-        font-size: 2em;
-        font-weight: bolder;
-        text-align: left;
-        color: #000;
-        margin-bottom: 2em;
-    }
-    .page .page-section:first-of-type .section-title {
-        font-size: 2em;
-        text-align: right;
-        color: #fff;
         margin-bottom: 3em;
+        text-align: left;
     }
+    .page .page-section {
+        margin-top: 5em; 
+    }
+    .page .section-title {
+        text-align: center;
+    }
+    
 }
 
-.page > .container {
-    padding-top: 5em;
-    min-height: 100vh;
-}
+
 .card .card-title {
     font-size: 1.25em;
     font-family: 'Nunito', sans-serif;
@@ -172,23 +212,13 @@ i + i {
 
     margin-bottom: .75em;
 }
-.page .page-title {
-    display: block;
-}
+
 .page-section {
     padding-top: 5em;
     padding-bottom: 1em;
 }
 .page-section .section-title {
-    font-size: 2em;
-    font-family: 'Nunito', sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    letter-spacing: -.05em;
-    text-transform: uppercase;
-
-    margin-top: .5em;
-    margin-bottom: 1.5em;
+    
 }
 .page-section .section-subtitle,
 .card .card-subtitle {

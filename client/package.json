@@ -22,8 +22,8 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-slick": "^0.28.0",
     "react-time-ago": "^6.2.2",
-    "swiper": "^6.4.6",
     "web-vitals": "^0.2.4",
     "yarn": "^1.22.10"
   },
@@ -51,5 +51,4 @@
       "last 1 safari version"
     ]
   }
-  
 }

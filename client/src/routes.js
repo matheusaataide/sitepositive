@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
 import Landing from './pages/Landing';
 import WhoWeAre from './pages/WhoWeAre';
 import Blog from './pages/Blog';
@@ -26,7 +26,7 @@ export default function Routes() {
             <Route exact path="/agenda/:courseId/:courseTitle" component={ Course } />
 
             <Route exact path="/blog" component={ Blog } />
-            <Route exact path="/blog/:postId/:postTitle" component={ BlogPost } />
+            <Route exact path="/blog/:postId/:postTitle" component={ withRouter(BlogPost) } />
 
             <Route exact path="/contato" component={ Contact } />
         </Switch>

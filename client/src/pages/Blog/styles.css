@@ -1,85 +1,70 @@
-.page.blog-post > .container{
-    padding-top: 8em;
-}
-.page.blog-post .content  img {
-   max-width: 80%;
-   margin-left: 10%;
-}
-.page.blog-post .content .section-title {
-    color: #000;
-    font-size: 2em;
-    text-align: center;
 
-    margin: 1em 0;
-}
-.page.blog-post .content .section-subtitle {
-        font-weight: bolder;
-        font-size: 1.2em;
-        letter-spacing: .05em;
-        
-        text-transform: uppercase;
-        text-align: center;
-        color: #4cd8b1 !important;
+.page.post .page-subtitle {
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: .05em;
     
-        margin-top: 1.5em;
-        margin-bottom: 0;
-    }
-.page.blog-post .content .lead {
+    text-transform: uppercase;
     text-align: center;
-    text-indent: 0;
-}
-.page.blog-post .content p {
-    text-indent: 1.5em;
-}
+    color: #2ba2cc;
 
-.page.blog-post span + span,
-.page.blog-post i + time {
-    margin-left: .4em;
+    margin-top: .25em;
+    margin-bottom: 1em;
 }
-@media (min-width: 992px){
-    .page.blog-post .content {
-        padding: 5em 2em;
-        margin-top: 5em;
-        background-color: #fff;
-        border: solid 2px #2ba2cc;
-        border-radius: 1em;
-
-        -webkit-box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
-        box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.05);
-    }
-    .page.blog-post .content img {
-        float: left;
-        max-width: 400px;
-        margin-right: 3em;
-        margin-bottom: .8em;
-        margin-left: 0;
-        border-radius: 1em !important;
-    }
-    .page.blog-post .content .section-title {
-        font-size: 2em;
-        font-weight: bolder;
-        color: #000;
-        text-align: left;
-        margin-top: .2em;
-    line-height: 1.3em;
-    margin-bottom: .5em;
-    }
-    .page.blog-post .content .section-subtitle {
-        font-size: 1.2em;
-        text-align: left;
-        margin-top: .25em;
+.page.post .page-title {
+    margin-bottom: .75em;
+}
+.page.post .info {
+    padding-left: 0;
+    font-size: 1em;
+    margin-bottom: .75em;
+    text-align: center;
+}
+.page.post .info > li {
+    display: inline;
+    list-style: none;
+    padding: 0 1em;
+}
+.page.post .post-image {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.page.post .cta {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+.page.post .cta .btn {
+    font-size: 1em !important;
+}
+@media (min-width: 992px) {
+    .page.post .page-title {
+        max-width: 15em;
         margin-bottom: .5em;
     }
-    .page.blog-post .content .lead {
-        font-size: 1em !important;
+    .page.post .page-subtitle {
         text-align: left;
+    }
+    .page.post .info {
+        margin-bottom: 3em;
+        padding-left: 1em;
+        text-align: left;
+    }
+    .page.post .info > li {
+        display: inline;
+        padding: 0;
+        margin-right: 3em;
+    }
+    .page.post .cta {
         margin-bottom: 3em;
     }
-    .page.blog-post .content hr {
-        display: none;
+    .page.post .post-image {
+        margin-top: -13em;
+        max-width: 50%;
+        float: right;
+        margin-left: 3.2em;
+        margin-bottom: 1.5em;
     }
-    .page.blog-post .content p {
-        font-size: 1.2em !important;
-        text-align: justify;
+    .page.blog .learn-together .section-title {
+        text-align: left;
     }
 }

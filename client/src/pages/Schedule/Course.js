@@ -5,7 +5,6 @@ import axios from 'axios';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { format, parseISO } from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
-import TimeAgo from 'react-time-ago';
 import parseHtml from 'react-html-parser';
 
 
@@ -25,7 +24,7 @@ class Course extends React.Component {
                 content: "",
                 status: true,
                 img: "",
-                createdAt: new Date().getTime()
+                date: "2021-03-13 17:30:07"
             }
         }
     }
@@ -48,56 +47,47 @@ class Course extends React.Component {
                     <title>Positive Treinamentos - {course.title}</title>
                 </Helmet>
 
-                <CustomNavbar />
+                <CustomNavbar shrink />
                 <Container className="content flex-grow-1 flex-shrink-0">
                 <Row>
                         <Col style={{ textAlign: 'justify' }}>
-                            <h1 className="page-title">Disciplina Positiva</h1>
-                            <p className="lead">
-                                <span>Por <Link to="/quem-somos" style={{
-                                    fontWeight: 'bold',
-                                    color: '#2ba2cc'
-                                }}>Patrícia Carvalho</Link></span>
-                            </p>
-                            <p>
-                            <i className="fas fa-map-marker-alt" style={{ marginRight: '.65em', color: '#2ba2cc' }}></i> 
-                                <span>{ course.local }</span>
-                            </p>
-                            <p>
-                                <i className="fas fa-calendar" style={{ marginRight: '.65em', color: '#2ba2cc' }}></i> 
+                            <h2 className="page-subtitle">Evento</h2>
+                            <h1 className="page-title">{course.title}</h1>
+                            <ul className="info">
+                                <li><i className="fas fa-map-marker-alt" style={{ marginRight: '.65em', color: '#2ba2cc' }}></i> 
+                                <span>{ course.local }</span></li>
+                                <li><i className="fas fa-calendar" style={{ marginRight: '.65em', color: '#2ba2cc' }}></i> 
                                 <span>{ format(
                                             parseISO(course.date),
                                             "dd' 'MMM', às 'HH:mm'h'",
                                             { locale: ptBr })
-                                        }</span>
-                            </p>
-                            <Image 
+                                        }</span></li>
+                            </ul>
+                            
+                            <Image fluid
+                                className="course-image"
                                 src={`${baseURL}/uploads/${course.img}`} 
-                                alt={course.title}
-                                style={{
-                                    maxWidth: '50%',
-                                    float: 'right',
-                                    marginLeft: '3.2em',
-                                    marginBottom: '1.5em'
-                                }} />
+                                alt={course.title} />
                             <div>{ parseHtml(course.content) }</div>           
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg={{ span: 10, offset: 1}}>
-                            <Image rounded 
-                                    src={`${baseURL}/uploads/${course.img}`} alt={course.title} />
-                        
-                            <h2 className="section-subtitle">Artigo</h2>
-                            <h1 className="section-title">{ course.title }</h1>
-                            <p className="lead">
-                                <span>por <Link to="/quem-somos">Positive Treinamentos</Link></span>
-                                <span><TimeAgo date={ new Date(course.createdAt) } timeStyle="round"/></span>
-                                <hr />
-                            </p>
-                            <div>
-                                { parseHtml(course.content)}
-                            </div>                          
+                        <Col style={{ textAlign: 'center'}}>
+                            <div className="cta">
+                                <a 
+                                    className="btn btn-primary"
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLScJyArpCdpOgPmvMkGGqRCwQ8aFPQNxwb_P_DmifoFF9h-CSA/viewform"
+                                    alt="Formulário de inscrição">
+                                    Inscrever-me        
+                                </a> 
+                                <a 
+                                    className="btn btn-link"
+                                    href="https://api.whatsapp.com/send?phone=5582999395433&text=Ol%C3%A1!%20Vi%20um%20evento%20no%20seu%20site,%20e%20queria%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20ele!%20%F0%9F%98%81%F0%9F%92%99"
+                                    alt="Falar no whatsapp">
+                                    Fale conosco! <i className="fab fa-whatsapp" style={{marginLeft: '.5em'}}></i>        
+                                </a> 
+                            </div>
+                            
                         </Col>
                     </Row>
                 </Container>

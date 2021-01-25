@@ -33,11 +33,6 @@ export default class NextEvents extends React.Component {
         return (
             <section className="page-section schedule" id="schedule">
                 <Container>
-                    <Row>
-                        <Col>
-                            <h2 className="section-title">Próximos eventos</h2>
-                        </Col>
-                    </Row>
                     <Row className={`has-${courses.length}` }>
                     { 
                         courses.map(course => {

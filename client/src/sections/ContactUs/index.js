@@ -37,7 +37,7 @@ const ContactUs = () => {
     };
 
     return (
-    <section className="contact-us page-section bg-primary">
+    <section className="contact-us page-section">
         <Container>
             <div className="section-wrapper">
                 <Row>
